@@ -73,29 +73,32 @@ export default function AdminLayout() {
           </div>
         </div>
 
-        {/* Nav Section */}
-        <div className="admin-nav-section-label">Management</div>
-        <nav>
-          {NAV_ITEMS.map(({ label, icon: Icon, path }) => (
-            <Link
-              key={path}
-              to={path}
-              className={`admin-nav-link ${isActive(path) ? 'active' : ''}`}
-              onClick={() => setMobileOpen(false)}
-            >
-              <Icon size={16} />
-              <span>{label}</span>
-              {isActive(path) && <ChevronRight size={14} style={{ marginLeft: 'auto', opacity: 0.5 }} />}
-            </Link>
-          ))}
-        </nav>
+        {/* Scrollable nav area */}
+        <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+          {/* Nav Section */}
+          <div className="admin-nav-section-label">Management</div>
+          <nav>
+            {NAV_ITEMS.map(({ label, icon: Icon, path }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`admin-nav-link ${isActive(path) ? 'active' : ''}`}
+                onClick={() => setMobileOpen(false)}
+              >
+                <Icon size={16} />
+                <span>{label}</span>
+                {isActive(path) && <ChevronRight size={14} style={{ marginLeft: 'auto', opacity: 0.5 }} />}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Sign Out */}
-        <div className="admin-nav-section-label" style={{ marginTop: 'auto' }}>System</div>
-        <button className="admin-nav-link" onClick={handleSignOut} style={{ width: '100%', textAlign: 'left' }}>
-          <LogOut size={16} />
-          <span>Sign Out</span>
-        </button>
+          {/* Sign Out */}
+          <div className="admin-nav-section-label" style={{ marginTop: 24 }}>System</div>
+          <button className="admin-nav-link" onClick={handleSignOut} style={{ width: '100%', textAlign: 'left', marginBottom: 8 }}>
+            <LogOut size={16} />
+            <span>Sign Out</span>
+          </button>
+        </div>
       </aside>
 
       {/* Mobile overlay */}
