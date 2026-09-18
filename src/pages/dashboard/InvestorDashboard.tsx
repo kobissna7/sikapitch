@@ -1,6 +1,6 @@
 import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
-import { LayoutDashboard, Users, Bookmark, Settings, LogOut, ChevronRight } from 'lucide-react'
+import { LayoutDashboard, Users, Bookmark, LogOut } from 'lucide-react'
 
 // Dummy Data
 const MATCHES = [

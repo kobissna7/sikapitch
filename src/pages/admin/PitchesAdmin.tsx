@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Search, Filter, Eye } from 'lucide-react'
+import { Eye } from 'lucide-react'
 
 const MOCK_PITCHES = [
   { id: 1, startup: 'AgriGrow Solutions', event: 'Accra Tech Summit 2026', submitted: '2026-09-12', status: 'Under Review' },

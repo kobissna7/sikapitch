@@ -1,4 +1,4 @@
-import { useEffect, useState, ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { useNavigate, useLocation, Navigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
 

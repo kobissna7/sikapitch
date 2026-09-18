@@ -25,6 +25,17 @@ export default function AdminLayout() {
   const location = useLocation()
   const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [adminEmail, setAdminEmail] = useState<string>('Admin')
+
+  import { useEffect } from 'react'
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user?.email) {
+        setAdminEmail(user.email)
+      }
+    })
+  }, [])
 
   const isActive = (path: string) => {
     if (path === '/admin') return location.pathname === '/admin'
@@ -37,7 +48,6 @@ export default function AdminLayout() {
     navigate('/admin/login')
   }
 
-  const adminEmail = sessionStorage.getItem('adminSessionUserId') ? 'Admin' : 'Admin'
   const currentPage = NAV_ITEMS.find(n => isActive(n.path))?.label ?? 'Dashboard'
 
   return (
@@ -56,9 +66,11 @@ export default function AdminLayout() {
 
         {/* User Badge */}
         <div className="admin-user-badge">
-          <div className="admin-avatar">A</div>
-          <div>
-            <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--white)' }}>{adminEmail}</div>
+          <div className="admin-avatar">{adminEmail !== 'Admin' ? adminEmail[0].toUpperCase() : 'A'}</div>
+          <div style={{ overflow: 'hidden' }}>
+            <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--white)', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+              {adminEmail}
+            </div>
             <div style={{ fontSize: '0.6875rem', color: 'var(--gold)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Super Admin</div>
           </div>
         </div>

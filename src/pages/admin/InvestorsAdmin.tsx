@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Search, Filter, MoreHorizontal } from 'lucide-react'
+import { Search, MoreHorizontal } from 'lucide-react'
 
 const MOCK_INVESTORS = [
   { id: 1, name: 'Abena Osei', company: 'Savannah VC', email: 'abena@savannah.vc', focus: 'FinTech, AgriTech', ticket: '$50k - $250k', status: 'Approved', date: '2026-09-07' },

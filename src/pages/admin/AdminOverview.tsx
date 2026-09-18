@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Users, Briefcase, FileCheck, Calendar, MessageSquare, DollarSign } from 'lucide-react'
-import { supabase } from '../../lib/supabase'
+import { Users, Briefcase, FileCheck, MessageSquare } from 'lucide-react'
 
 export default function AdminOverview() {
   const [stats, setStats] = useState({

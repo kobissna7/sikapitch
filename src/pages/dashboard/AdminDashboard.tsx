@@ -74,7 +74,7 @@ const Overview = () => (
 )
 
 export default function AdminDashboard() {
-  const { user, logout } = useAuth()
+  const { logout } = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
   
