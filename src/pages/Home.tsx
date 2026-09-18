@@ -94,7 +94,7 @@ export default function Home() {
               className="animate-ken-burns"
               style={{
                 position: 'absolute', inset: 0,
-                backgroundImage: 'url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=2070&q=80")',
+                backgroundImage: 'url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2070&q=80")',
                 backgroundSize: 'cover', backgroundPosition: 'center',
                 opacity: 0.85,
               }}
@@ -183,7 +183,7 @@ export default function Home() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16 }}>
               <div style={{
                 width: 52, height: 52, borderRadius: '50%', flexShrink: 0,
-                backgroundImage: 'url("https://images.unsplash.com/photo-1531123897727-8f129e1bf38c?w=100&h=100&fit=crop&crop=face")',
+                backgroundImage: 'url("https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=100&h=100&fit=crop&crop=face")',
                 backgroundSize: 'cover', backgroundPosition: 'center',
                 border: '2px solid var(--border-gold)',
               }} />

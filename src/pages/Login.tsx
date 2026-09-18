@@ -138,7 +138,7 @@ export default function Login() {
       {/* ===== RIGHT: IMAGE ===== */}
       <div className="auth-image-col">
         <img
-          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1400&q=80"
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80"
           alt="Founders on stage at a pitch event"
         />
         <div className="auth-image-overlay">

@@ -139,7 +139,7 @@ export default function AdminLogin() {
       {/* Right: Image */}
       <div className="auth-image-col">
         <img
-          src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1400&q=80"
+          src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1400&q=80"
           alt="African entrepreneur speaking at a business event"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
         />
