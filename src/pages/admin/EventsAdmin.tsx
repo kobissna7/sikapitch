@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 interface EventData {
   id: string
   title: string
-  date: string
+  event_date: string
   location: string
   status: string
 }
@@ -25,7 +25,7 @@ export default function EventsAdmin() {
       const { data, error } = await supabase
         .from('events')
         .select('*')
-        .order('date', { ascending: true })
+        .order('event_date', { ascending: true })
 
       if (error) throw error
       setEvents(data || [])
@@ -70,7 +70,7 @@ export default function EventsAdmin() {
               ) : events.map(e => (
                 <tr key={e.id}>
                   <td style={{ fontWeight: 600, color: 'var(--white)' }}>{e.title}</td>
-                  <td>{new Date(e.date).toLocaleDateString()}</td>
+                  <td>{e.event_date ? new Date(e.event_date).toLocaleDateString() : 'TBD'}</td>
                   <td>{e.location}</td>
                   <td>
                     <span className={`badge ${e.status === 'Upcoming' ? 'badge-green' : 'badge-grey'}`}>

@@ -5,14 +5,13 @@ import toast from 'react-hot-toast'
 
 interface StartupProfile {
   id: string
+  user_id?: string
   company_name: string
   industry: string
   status: string
   created_at: string
-  users?: Array<{
-    full_name: string
-    email: string
-  }>
+  contact_email?: string
+  founder_name?: string
 }
 
 export default function StartupsAdmin() {
@@ -30,17 +29,7 @@ export default function StartupsAdmin() {
       setLoading(true)
       const { data, error } = await supabase
         .from('startup_profiles')
-        .select(`
-          id,
-          company_name,
-          industry,
-          status,
-          created_at,
-          users (
-            full_name,
-            email
-          )
-        `)
+        .select('id, company_name, industry, status, created_at, contact_email, founder_name, user_id')
         .order('created_at', { ascending: false })
 
       if (error) throw error
@@ -72,8 +61,8 @@ export default function StartupsAdmin() {
     const term = searchTerm.toLowerCase()
     const matchSearch = 
       s.company_name?.toLowerCase().includes(term) || 
-      s.users?.[0]?.full_name?.toLowerCase().includes(term) ||
-      s.users?.[0]?.email?.toLowerCase().includes(term)
+      s.founder_name?.toLowerCase().includes(term) ||
+      s.contact_email?.toLowerCase().includes(term)
     return matchStatus && matchSearch
   })
 
@@ -144,9 +133,9 @@ export default function StartupsAdmin() {
                 <tr key={s.id}>
                   <td style={{ fontWeight: 600, color: 'var(--white)' }}>
                     {s.company_name || 'Unnamed Company'}
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>{s.users?.[0]?.email}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>{s.contact_email}</div>
                   </td>
-                  <td>{s.users?.[0]?.full_name || 'Unknown'}</td>
+                  <td>{s.founder_name || 'Unknown'}</td>
                   <td><span className="badge" style={{ background: 'rgba(255,255,255,0.06)' }}>{s.industry || 'N/A'}</span></td>
                   <td>{new Date(s.created_at).toLocaleDateString()}</td>
                   <td>

@@ -9,10 +9,8 @@ interface Payment {
   status: string
   payment_type: string
   created_at: string
-  users?: Array<{
-    full_name: string
-    email: string
-  }>
+  payer_name?: string
+  payer_email?: string
 }
 
 export default function PaymentsAdmin() {
@@ -28,18 +26,7 @@ export default function PaymentsAdmin() {
       setLoading(true)
       const { data, error } = await supabase
         .from('payments')
-        .select(`
-          id,
-          amount,
-          currency,
-          status,
-          payment_type,
-          created_at,
-          users (
-            full_name,
-            email
-          )
-        `)
+        .select('id, amount, currency, status, payment_type, created_at, payer_name, payer_email')
         .order('created_at', { ascending: false })
 
       if (error) throw error
@@ -103,8 +90,8 @@ export default function PaymentsAdmin() {
               ) : payments.map(p => (
                 <tr key={p.id}>
                   <td style={{ fontWeight: 600, color: 'var(--white)' }}>
-                    {p.users?.[0]?.full_name || 'Unknown'}
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>{p.users?.[0]?.email}</div>
+                    {p.payer_name || 'Unknown'}
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>{p.payer_email}</div>
                   </td>
                   <td><span className="badge badge-dark">{p.payment_type || 'N/A'}</span></td>
                   <td style={{ fontWeight: 700, color: 'var(--gold)' }}>

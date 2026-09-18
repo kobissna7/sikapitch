@@ -10,9 +10,7 @@ interface Pitch {
   created_at: string
   deck_url?: string
   startup_id?: string
-  users?: Array<{
-    full_name: string
-  }>
+  founder_name?: string
 }
 
 export default function PitchesAdmin() {
@@ -28,16 +26,7 @@ export default function PitchesAdmin() {
       setLoading(true)
       const { data, error } = await supabase
         .from('pitches')
-        .select(`
-          id,
-          title,
-          status,
-          created_at,
-          deck_url,
-          users (
-            full_name
-          )
-        `)
+        .select('id, title, status, created_at, deck_url, startup_id, founder_name')
         .order('created_at', { ascending: false })
 
       if (error) throw error
@@ -99,7 +88,7 @@ export default function PitchesAdmin() {
               ) : pitches.map(p => (
                 <tr key={p.id}>
                   <td style={{ fontWeight: 600, color: 'var(--white)' }}>
-                    {p.users?.[0]?.full_name || 'Unknown'}
+                    {p.founder_name || 'Unknown'}
                   </td>
                   <td>{p.title || 'Untitled Pitch'}</td>
                   <td>{new Date(p.created_at).toLocaleDateString()}</td>

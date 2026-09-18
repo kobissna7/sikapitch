@@ -5,15 +5,14 @@ import toast from 'react-hot-toast'
 
 interface InvestorProfile {
   id: string
+  user_id?: string
   company_name: string
   focus: string
   ticket_size: string
   status: string
   created_at: string
-  users?: Array<{
-    full_name: string
-    email: string
-  }>
+  contact_email?: string
+  full_name?: string
 }
 
 export default function InvestorsAdmin() {
@@ -30,18 +29,7 @@ export default function InvestorsAdmin() {
       setLoading(true)
       const { data, error } = await supabase
         .from('investor_profiles')
-        .select(`
-          id,
-          company_name,
-          focus,
-          ticket_size,
-          status,
-          created_at,
-          users (
-            full_name,
-            email
-          )
-        `)
+        .select('id, company_name, focus, ticket_size, status, created_at, contact_email, full_name, user_id')
         .order('created_at', { ascending: false })
 
       if (error) throw error
@@ -71,9 +59,9 @@ export default function InvestorsAdmin() {
   const filteredInvestors = investors.filter(i => {
     const term = searchTerm.toLowerCase()
     return (
-      i.users?.[0]?.full_name?.toLowerCase().includes(term) ||
+      i.full_name?.toLowerCase().includes(term) ||
       i.company_name?.toLowerCase().includes(term) ||
-      i.users?.[0]?.email?.toLowerCase().includes(term) ||
+      i.contact_email?.toLowerCase().includes(term) ||
       i.focus?.toLowerCase().includes(term)
     )
   })
@@ -127,8 +115,8 @@ export default function InvestorsAdmin() {
               ) : filteredInvestors.map(i => (
                 <tr key={i.id}>
                   <td style={{ fontWeight: 600, color: 'var(--white)' }}>
-                    {i.users?.[0]?.full_name || 'Unknown'}
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>{i.company_name || i.users?.[0]?.email}</div>
+                    {i.full_name || 'Unknown'}
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 400 }}>{i.company_name || i.contact_email}</div>
                   </td>
                   <td>{i.focus || 'N/A'}</td>
                   <td>{i.ticket_size || 'N/A'}</td>
