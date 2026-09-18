@@ -203,7 +203,7 @@ export default function Register() {
       {/* ===== RIGHT: IMAGE ===== */}
       <div className="auth-image-col">
         <img
-          src="https://images.unsplash.com/photo-1613592237018-bbf8973eef4f?auto=format&fit=crop&w=1400&q=80"
+          src="https://images.unsplash.com/photo-1692689383138-c2df3476072c?auto=format&fit=crop&w=1400&q=80"
           alt="Founders in a business pitch meeting"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
