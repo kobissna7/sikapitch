@@ -11,18 +11,18 @@ const TYPES = ['Angel Investors', 'Venture Capital Funds', 'Family Offices', 'De
 
 export default function ForInvestors() {
   return (
-    <div style={{
+    <div className="for-investors-grid" style={{
       minHeight: '100vh',
       paddingTop: 'var(--nav-h)',
       background: 'var(--black)',
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
-      overflow: 'hidden',
+      overflowX: 'hidden',
     }}>
       {/* LEFT: IMAGE */}
-      <div style={{ position: 'relative', overflow: 'hidden' }}>
+      <div className="for-investors-img" style={{ position: 'relative', overflow: 'hidden' }}>
         <img
-          src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=1400&q=80"
+          src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&w=1400&q=80"
           alt="Professional investor in a meeting"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
@@ -86,6 +86,18 @@ export default function ForInvestors() {
           </Link>
         </div>
       </div>
+
+      {/* MOBILE STYLES */}
+      <style>{`
+        @media (max-width: 900px) {
+          .for-investors-grid { grid-template-columns: 1fr !important; }
+          .for-investors-img { display: none !important; }
+        }
+        @media (max-width: 480px) {
+          .for-investors-grid .kicker { font-size: 0.625rem; }
+          .for-investors-grid .display-lg { font-size: 2.25rem; }
+        }
+      `}</style>
     </div>
   )
 }

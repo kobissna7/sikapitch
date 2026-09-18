@@ -709,3 +709,57 @@ hr { border: none; border-top: 1px solid var(--border); }
   .admin-hamburger { display: block; }
   .admin-sidebar-overlay { display: block; }
 }
+
+/* ===== COMPREHENSIVE RESPONSIVE ===== */
+
+/* -- Tablet (≤1024px) -- */
+@media (max-width: 1024px) {
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .data-table { min-width: 640px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  :root { --section-pad: 120px; }
+  .dash-header h1 { font-size: 1.75rem; }
+}
+
+/* -- Mobile (≤768px) -- */
+@media (max-width: 768px) {
+  :root { --section-pad: 80px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .nav-links, .nav-actions { display: none; }
+  .nav-hamburger { display: flex; }
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); }
+  .dash-main { margin-left: 0; padding: 24px 16px; }
+  .hero-split-grid { grid-template-columns: 1fr; }
+  .hero-img-right { min-height: 220px; }
+  .container-left-pad { padding-left: 24px; padding-right: 24px; }
+  .auth-layout { grid-template-columns: 1fr !important; height: auto !important; overflow: visible !important; }
+  .auth-image-col { height: 240px; order: -1; }
+  .auth-form-col { padding: 48px 28px !important; }
+  .admin-content { padding: 20px 16px !important; }
+  .admin-topbar { padding: 0 16px !important; }
+  .dash-header { margin-bottom: 24px; padding-bottom: 20px; }
+  .dash-header h1 { font-size: 1.5rem; }
+  .stat-value { font-size: 2rem; }
+  .section { padding: var(--section-pad) 0; }
+  .container { padding: 0 20px; }
+}
+
+/* -- Small mobile (≤480px) -- */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 12px; }
+  .display-xl { font-size: clamp(2.5rem, 14vw, 4rem); }
+  .display-lg { font-size: clamp(2rem, 11vw, 3rem); }
+  .display-md { font-size: clamp(1.625rem, 8vw, 2.5rem); }
+  .btn { padding: 14px 24px; font-size: 0.8125rem; }
+  .btn-lg { padding: 16px 28px; font-size: 0.875rem; }
+  .auth-form-col { padding: 36px 20px !important; }
+  .data-table { min-width: 520px; font-size: 0.8125rem; }
+  .data-table th, .data-table td { padding: 10px 12px; }
+  .modal { padding: 24px 20px; }
+  :root { --section-pad: 64px; }
+}

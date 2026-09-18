@@ -68,9 +68,9 @@ export default function Register() {
   const clearError = (field: string) => setErrors(prev => { const n = { ...prev }; delete n[field]; return n })
 
   return (
-    <div className="auth-layout" style={{ height: '100vh', overflow: 'hidden', paddingTop: 'var(--nav-h)' }}>
+    <div className="auth-layout" style={{ height: '100vh', overflow: 'hidden' }}>
       {/* ===== LEFT: FORM ===== */}
-      <div className="auth-form-col" style={{ background: 'var(--navy-mid)', overflowY: 'auto' }}>
+      <div className="auth-form-col" style={{ background: 'var(--navy-mid)', overflowY: 'auto', paddingTop: 'max(var(--nav-h), 40px)' }}>
 
         <div style={{ maxWidth: 420, width: '100%' }}>
           {/* Kicker */}
@@ -109,7 +109,7 @@ export default function Register() {
 
           <form onSubmit={handleSubmit} noValidate>
             {/* Full Name */}
-            <div className="field-group" style={{ marginBottom: 20, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '100ms', animationFillMode: 'forwards', opacity: 0 }}>
+            <div className="field-group" style={{ marginBottom: 12, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '100ms', animationFillMode: 'forwards', opacity: 0 }}>
               <label className="field-label" htmlFor="reg-name">Full Name</label>
               <input
                 type="text" id="reg-name"
@@ -123,7 +123,7 @@ export default function Register() {
             </div>
 
             {/* Company / Firm */}
-            <div className="field-group" style={{ marginBottom: 20, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '180ms', animationFillMode: 'forwards', opacity: 0 }}>
+            <div className="field-group" style={{ marginBottom: 12, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '180ms', animationFillMode: 'forwards', opacity: 0 }}>
               <label className="field-label" htmlFor="reg-company">
                 {activeTab === 'startup' ? 'Company / Startup Name' : 'Investment Firm (Optional)'}
               </label>
@@ -138,7 +138,7 @@ export default function Register() {
             </div>
 
             {/* Email */}
-            <div className="field-group" style={{ marginBottom: 20, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '260ms', animationFillMode: 'forwards', opacity: 0 }}>
+            <div className="field-group" style={{ marginBottom: 12, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '260ms', animationFillMode: 'forwards', opacity: 0 }}>
               <label className="field-label" htmlFor="reg-email">Email Address</label>
               <input
                 type="email" id="reg-email"
@@ -152,7 +152,7 @@ export default function Register() {
             </div>
 
             {/* Password */}
-            <div className="field-group" style={{ marginBottom: 20, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '340ms', animationFillMode: 'forwards', opacity: 0 }}>
+            <div className="field-group" style={{ marginBottom: 16, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '340ms', animationFillMode: 'forwards', opacity: 0 }}>
               <label className="field-label" htmlFor="reg-password">Password</label>
               <div className="field-pw-wrap">
                 <input
@@ -171,7 +171,7 @@ export default function Register() {
             </div>
 
             {/* Terms */}
-            <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.3)', marginBottom: 20, lineHeight: 1.6, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '420ms', animationFillMode: 'forwards', opacity: 0 }}>
+            <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)', marginBottom: 16, lineHeight: 1.6, animationName: 'fadeInUp', animationDuration: '0.7s', animationDelay: '420ms', animationFillMode: 'forwards', opacity: 0 }}>
               By registering, you agree to our{' '}
               <Link to="/terms" style={{ color: 'var(--gold)', borderBottom: '1px solid rgba(201,162,39,0.35)', paddingBottom: 1 }}>Terms & Conditions</Link>
               {' '}and{' '}
@@ -183,7 +183,7 @@ export default function Register() {
               <button
                 type="submit"
                 className="btn btn-gold"
-                style={{ width: '100%', justifyContent: 'center', fontSize: '0.9375rem', padding: '16px 32px', marginBottom: 32 }}
+                style={{ width: '100%', justifyContent: 'center', fontSize: '0.9375rem', padding: '14px 32px', marginBottom: 24 }}
                 disabled={loading}
               >
                 {loading ? 'Creating Account...' : `Register as ${activeTab === 'startup' ? 'Startup' : 'Investor'}`}
@@ -203,7 +203,7 @@ export default function Register() {
       {/* ===== RIGHT: IMAGE ===== */}
       <div className="auth-image-col">
         <img
-          src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=1400&q=80"
+          src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1400&q=80"
           alt="Founders in a business pitch meeting"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
@@ -212,7 +212,7 @@ export default function Register() {
             <p style={{
               fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 3.5vw, 3rem)',
               fontWeight: 800, color: 'var(--white)', lineHeight: 1.15,
-              letterSpacing: '-0.02em', marginBottom: 24,
+              letterSpacing: '-0.02em', marginBottom: 16,
             }}>
               The investors are<br /><span style={{ color: 'var(--gold)' }}>already waiting.</span>
             </p>

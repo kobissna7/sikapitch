@@ -9,13 +9,13 @@ const BENEFITS = [
 
 export default function ForStartups() {
   return (
-    <div style={{
+    <div className="for-startups-grid" style={{
       minHeight: '100vh',
       paddingTop: 'var(--nav-h)',
       background: 'var(--black)',
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
-      overflow: 'hidden',
+      overflowX: 'hidden',
     }}>
       {/* LEFT: CONTENT */}
       <div style={{
@@ -56,9 +56,9 @@ export default function ForStartups() {
       </div>
 
       {/* RIGHT: IMAGE */}
-      <div style={{ position: 'relative', overflow: 'hidden' }}>
+      <div className="for-startups-img" style={{ position: 'relative', overflow: 'hidden' }}>
         <img
-          src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=80"
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80"
           alt="African founders in a business meeting"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
@@ -93,6 +93,10 @@ export default function ForStartups() {
         @media (max-width: 900px) {
           .for-startups-grid { grid-template-columns: 1fr !important; }
           .for-startups-img { display: none !important; }
+        }
+        @media (max-width: 480px) {
+          .for-startups-grid .kicker { font-size: 0.625rem; }
+          .for-startups-grid .display-lg { font-size: 2.25rem; }
         }
       `}</style>
     </div>

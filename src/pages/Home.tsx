@@ -49,7 +49,6 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        overflow: 'hidden',
         background: 'var(--navy)',
       }}>
         
@@ -95,7 +94,7 @@ export default function Home() {
               className="animate-ken-burns"
               style={{
                 position: 'absolute', inset: 0,
-                backgroundImage: 'url("https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=2070&q=80")',
+                backgroundImage: 'url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=2070&q=80")',
                 backgroundSize: 'cover', backgroundPosition: 'center',
                 opacity: 0.85,
               }}
