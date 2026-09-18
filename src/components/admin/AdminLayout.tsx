@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
   LayoutDashboard, Users, Briefcase, FileCheck, FolderOpen,
@@ -26,8 +26,6 @@ export default function AdminLayout() {
   const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [adminEmail, setAdminEmail] = useState<string>('Admin')
-
-  import { useEffect } from 'react'
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {

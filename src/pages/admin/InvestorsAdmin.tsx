@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Search, MoreHorizontal } from 'lucide-react'
 
 const MOCK_INVESTORS = [

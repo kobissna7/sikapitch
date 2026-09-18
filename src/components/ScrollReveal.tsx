@@ -5,7 +5,7 @@ interface ScrollRevealProps {
   delay?: number
   className?: string
   style?: React.CSSProperties
-  as?: keyof JSX.IntrinsicElements
+  as?: React.ElementType
 }
 
 export default function ScrollReveal({
