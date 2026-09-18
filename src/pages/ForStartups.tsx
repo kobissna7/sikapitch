@@ -58,7 +58,7 @@ export default function ForStartups() {
       {/* RIGHT: IMAGE */}
       <div className="for-startups-img" style={{ position: 'relative', overflow: 'hidden' }}>
         <img
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=80"
+          src="https://images.unsplash.com/photo-1613591876822-846e82526ee7?auto=format&fit=crop&w=1400&q=80"
           alt="African founders in a business meeting"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />

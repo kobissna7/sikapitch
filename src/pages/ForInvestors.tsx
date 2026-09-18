@@ -22,7 +22,7 @@ export default function ForInvestors() {
       {/* LEFT: IMAGE */}
       <div className="for-investors-img" style={{ position: 'relative', overflow: 'hidden' }}>
         <img
-          src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=1400&q=80"
+          src="https://images.unsplash.com/photo-1611428813653-aa606c998586?auto=format&fit=crop&w=1400&q=80"
           alt="Professional investor in a meeting"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
         />
