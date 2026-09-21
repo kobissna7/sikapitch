@@ -752,8 +752,8 @@ hr { border: none; border-top: 1px solid var(--border); }
   .hero-img-right { min-height: 220px; }
   .container-left-pad { padding-left: 24px; padding-right: 24px; }
   .auth-layout { grid-template-columns: 1fr !important; height: auto !important; overflow: visible !important; }
-  .auth-image-col { height: 240px; order: -1; }
-  .auth-form-col { padding: 48px 28px !important; }
+  .auth-image-col { display: none !important; }
+  .auth-form-col { padding: calc(var(--nav-h) + 40px) 24px 64px !important; }
   .admin-content { padding: 20px 16px !important; }
   .admin-topbar { padding: 0 16px !important; }
   .dash-header { margin-bottom: 24px; padding-bottom: 20px; }
