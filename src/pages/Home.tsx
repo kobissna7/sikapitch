@@ -127,7 +127,7 @@ export default function Home() {
                       fontWeight: 800,
                       lineHeight: 1,
                       color: 'transparent',
-                      WebkitTextStroke: '1px rgba(201,162,39,0.15)',
+                      WebkitTextStroke: '2px rgba(201,162,39,0.4)',
                       userSelect: 'none',
                     }}>
                       {step.num}
@@ -251,7 +251,7 @@ export default function Home() {
                   gap: 40, alignItems: 'center',
                   padding: 'var(--section-pad) 0'
                 }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3.5rem, 10vw, 4.5rem)', fontWeight: 800, color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.1)' }}>{v.num}</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3.5rem, 10vw, 4.5rem)', fontWeight: 800, color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.35)' }}>{v.num}</div>
                   <h3 className="heading-lg text-white">{v.title}</h3>
                   <p className="body-md">{v.body}</p>
                 </div>
