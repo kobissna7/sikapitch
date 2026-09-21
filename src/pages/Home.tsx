@@ -83,13 +83,6 @@ export default function Home() {
                 We've got <span style={{ color: 'var(--gold)' }}>the room.</span>
               </span>
             </h1>
-            <p className="animate-fade-up delay-750 body-lg" style={{ margin: '0 auto 48px', maxWidth: 600, color: 'rgba(255,255,255,0.7)' }}>
-              Pitch to the investors who can actually say yes. SikaPitch connects Africa's boldest founders to capital through structured events and a matching engine that works.
-            </p>
-            <div className="flex gap-24 items-center justify-center animate-fade-up delay-900" style={{ flexWrap: 'wrap', marginBottom: 48 }}>
-              <Link to="/register" className="btn btn-gold btn-lg">Register Your Startup</Link>
-              <Link to="/register?type=investor" className="btn-text-underline">I'm an investor &rarr;</Link>
-            </div>
         </div>
 
         {/* ===== MARQUEE ===== */}
@@ -101,6 +94,21 @@ export default function Home() {
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== HERO CTA (BELOW FOLD) ===== */}
+      <section style={{ background: 'var(--black)', padding: '120px 0 80px', textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: 900 }}>
+          <ScrollReveal>
+            <p className="body-lg" style={{ margin: '0 auto 48px', maxWidth: 600, color: 'rgba(255,255,255,0.7)' }}>
+              Pitch to the investors who can actually say yes. SikaPitch connects Africa's boldest founders to capital through structured events and a matching engine that works.
+            </p>
+            <div className="flex gap-24 items-center justify-center" style={{ flexWrap: 'wrap' }}>
+              <Link to="/register" className="btn btn-gold btn-lg" style={{ padding: '20px 48px' }}>Register Your Startup</Link>
+              <Link to="/register?type=investor" className="btn-text-underline" style={{ color: 'var(--white)' }}>I'm an investor &rarr;</Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
