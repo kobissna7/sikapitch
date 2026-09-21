@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ScrollReveal from '../components/ScrollReveal'
 
 const BENEFITS = [
   { title: 'Business Registration', body: 'Register and verify your startup. Build trust with investors from day one.' },
@@ -9,96 +10,92 @@ const BENEFITS = [
 
 export default function ForStartups() {
   return (
-    <div className="for-startups-grid" style={{
-      minHeight: '100vh',
-      paddingTop: 'var(--nav-h)',
-      background: 'var(--black)',
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      overflowX: 'hidden',
-    }}>
-      {/* LEFT: CONTENT */}
-      <div style={{
+    <>
+      {/* IMMERSIVE HERO */}
+      <section style={{
+        position: 'relative',
+        minHeight: '100dvh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: 'clamp(40px, 6vw, 96px)',
-        paddingTop: 'clamp(40px, 4vw, 64px)',
+        paddingTop: 'calc(var(--nav-h) + 40px)',
+        background: 'var(--black)',
+        overflow: 'hidden'
       }}>
-        <div className="kicker" style={{ marginBottom: 20 }}>For Startups &amp; SMEs</div>
-        <h1 className="display-lg text-white" style={{ marginBottom: 20 }}>
-          Build Your Pipeline from<br />
-          <span style={{ color: 'var(--gold)' }}>Idea to Funded Venture.</span>
-        </h1>
-        <p className="body-lg" style={{ maxWidth: 480, marginBottom: 40, lineHeight: 1.7 }}>
-          SikaPitch gives African founders a structured path to capital. Register, build your profile, apply to pitch events, and connect with investors who are actively looking for businesses like yours.
-        </p>
+        {/* Background Image */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <div
+            className="animate-ken-burns"
+            style={{
+              position: 'absolute', inset: 0,
+              backgroundImage: 'url("https://images.unsplash.com/photo-1594750301491-4023e192171a?auto=format&fit=crop&w=2000&q=80")',
+              backgroundSize: 'cover', backgroundPosition: 'center',
+              opacity: 0.35,
+            }}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--black) 0%, transparent 40%, transparent 80%, var(--black) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, var(--black) 0%, transparent 100%)', opacity: 0.8 }} />
+        </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 48 }}>
-          {BENEFITS.map(b => (
-            <div key={b.title} style={{
-              borderTop: '1px solid rgba(201,162,39,0.25)',
-              paddingTop: 16,
-            }}>
-              <div style={{ width: 6, height: 6, background: 'var(--gold)', borderRadius: '50%', marginBottom: 10 }} />
-              <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--white)', marginBottom: 6 }}>{b.title}</div>
-              <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>{b.body}</p>
+        <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: 900 }}>
+          <ScrollReveal>
+            <div className="kicker" style={{ marginBottom: 24 }}>For Startups &amp; SMEs</div>
+            <h1 className="display-xl text-white" style={{ marginBottom: 32, lineHeight: 1.1 }}>
+              Build Your Pipeline from<br />
+              <span style={{ color: 'var(--gold)' }}>Idea to Funded Venture.</span>
+            </h1>
+            <p className="body-lg" style={{ maxWidth: 600, marginBottom: 48, color: 'rgba(255,255,255,0.7)' }}>
+              SikaPitch gives African founders a structured path to capital. Register, build your profile, apply to pitch events, and connect with investors who are actively looking for businesses like yours.
+            </p>
+            <div className="flex gap-24 items-center" style={{ flexWrap: 'wrap' }}>
+              <Link to="/register" className="btn btn-gold btn-lg" style={{ padding: '20px 48px' }}>Register as a Startup</Link>
+              <Link to="/events" className="btn-text-underline" style={{ color: 'var(--white)' }}>View Upcoming Events &rarr;</Link>
             </div>
-          ))}
+          </ScrollReveal>
         </div>
+      </section>
 
-        <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-          <Link to="/register" className="btn btn-gold btn-lg">Register as a Startup</Link>
-          <Link to="/events" style={{ fontSize: '0.875rem', color: 'var(--text-muted)', borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: 2 }}>
-            View Upcoming Events
-          </Link>
-        </div>
-      </div>
-
-      {/* RIGHT: IMAGE */}
-      <div className="for-startups-img" style={{ position: 'relative', overflow: 'hidden' }}>
-        <img
-          src="https://images.unsplash.com/photo-1594750301491-4023e192171a?auto=format&fit=crop&w=1400&q=80"
-          alt="African founders in a business meeting"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-        />
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(to right, rgba(11,18,40,0.85) 0%, rgba(11,18,40,0.2) 100%)',
-        }} />
-        {/* Stat callout */}
-        <div style={{
-          position: 'absolute', bottom: 48, left: 48, right: 48,
-          background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(201,162,39,0.2)', borderRadius: 4,
-          padding: '24px 28px',
-        }}>
-          <div style={{ display: 'flex', gap: 40 }}>
-            {[
-              { val: '12+', label: 'Active Sectors' },
-              { val: '4', label: 'Funding Stages' },
-              { val: 'GH', label: 'Ghana Focused' },
-            ].map(s => (
-              <div key={s.label}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, color: 'var(--gold)' }}>{s.val}</div>
-                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{s.label}</div>
+      {/* STATS & BENEFITS */}
+      <section style={{ background: 'var(--black)', padding: 'var(--section-pad) 0' }}>
+        <div className="container">
+          <div className="grid-2" style={{ gap: 80 }}>
+            {/* LEFT: Stats */}
+            <ScrollReveal>
+              <h2 className="display-md text-white" style={{ marginBottom: 48, lineHeight: 1.1 }}>
+                The Network<br /><span style={{ color: 'var(--gold)' }}>You Need.</span>
+              </h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 32 }}>
+                {[
+                  { val: '12+', label: 'Active Sectors' },
+                  { val: '4', label: 'Funding Stages' },
+                  { val: 'GH', label: 'Ghana Focused' },
+                ].map(s => (
+                  <div key={s.label} style={{ borderLeft: '2px solid var(--gold)', paddingLeft: 24 }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '3rem', fontWeight: 800, color: 'var(--white)', lineHeight: 1 }}>{s.val}</div>
+                    <div style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: 8 }}>{s.label}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </ScrollReveal>
+
+            {/* RIGHT: Benefits */}
+            <ScrollReveal delay={150}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 40, paddingTop: 16 }}>
+                {BENEFITS.map((b, i) => (
+                  <div key={b.title} style={{
+                    borderTop: '1px solid rgba(255,255,255,0.08)',
+                    paddingTop: 32,
+                  }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 800, color: 'transparent', WebkitTextStroke: '1px rgba(201,162,39,0.4)', marginBottom: 16 }}>0{i+1}</div>
+                    <h3 className="heading-lg text-white" style={{ marginBottom: 12 }}>{b.title}</h3>
+                    <p className="body-md" style={{ color: 'rgba(255,255,255,0.5)' }}>{b.body}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </div>
-      </div>
-
-      {/* MOBILE STYLES */}
-      <style>{`
-        @media (max-width: 900px) {
-          .for-startups-grid { grid-template-columns: 1fr !important; }
-          .for-startups-img { display: none !important; }
-        }
-        @media (max-width: 480px) {
-          .for-startups-grid .kicker { font-size: 0.625rem; }
-          .for-startups-grid .display-lg { font-size: 2.25rem; }
-        }
-      `}</style>
-    </div>
+      </section>
+    </>
   )
 }

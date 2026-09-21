@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ScrollReveal from '../components/ScrollReveal'
 
 const BENEFITS = [
   { title: 'Curated Deal Flow', body: 'Access a vetted pipeline of African startups, pre-screened for quality before they reach your dashboard.' },
@@ -11,93 +12,97 @@ const TYPES = ['Angel Investors', 'Venture Capital Funds', 'Family Offices', 'De
 
 export default function ForInvestors() {
   return (
-    <div className="for-investors-grid" style={{
-      minHeight: '100vh',
-      paddingTop: 'var(--nav-h)',
-      background: 'var(--black)',
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      overflowX: 'hidden',
-    }}>
-      {/* LEFT: IMAGE */}
-      <div className="for-investors-img" style={{ position: 'relative', overflow: 'hidden' }}>
-        <img
-          src="https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?auto=format&fit=crop&w=1400&q=80"
-          alt="Professional investor in a meeting"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-        />
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(to left, rgba(11,18,40,0.8) 0%, rgba(11,18,40,0.15) 100%)',
-        }} />
-        {/* Who qualifies */}
-        <div style={{
-          position: 'absolute', bottom: 48, left: 48, right: 48,
-          background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(201,162,39,0.2)', borderRadius: 4,
-          padding: '24px 28px',
-        }}>
-          <div style={{ fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 14 }}>Who Qualifies</div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {TYPES.map(t => (
-              <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 5, height: 5, background: 'var(--gold)', borderRadius: '50%', flexShrink: 0 }} />
-                <span style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.75)' }}>{t}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* RIGHT: CONTENT */}
-      <div style={{
+    <>
+      {/* IMMERSIVE HERO */}
+      <section style={{
+        position: 'relative',
+        minHeight: '100dvh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: 'clamp(40px, 6vw, 96px)',
-        paddingTop: 'clamp(40px, 4vw, 64px)',
+        paddingTop: 'calc(var(--nav-h) + 40px)',
+        background: 'var(--black)',
+        overflow: 'hidden'
       }}>
-        <div className="kicker" style={{ marginBottom: 20 }}>For Investors</div>
-        <h1 className="display-lg text-white" style={{ marginBottom: 20 }}>
-          Access Africa's Most<br />
-          <span style={{ color: 'var(--gold)' }}>Promising Ventures.</span>
-        </h1>
-        <p className="body-lg" style={{ maxWidth: 480, marginBottom: 40, lineHeight: 1.7 }}>
-          Quality deal flow, filtered to match your mandate. No noise. Just the right founders at the right stage, verified and ready to pitch.
-        </p>
+        {/* Background Image */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <div
+            className="animate-ken-burns"
+            style={{
+              position: 'absolute', inset: 0,
+              backgroundImage: 'url("https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?auto=format&fit=crop&w=2000&q=80")',
+              backgroundSize: 'cover', backgroundPosition: 'center',
+              opacity: 0.35,
+            }}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--black) 0%, transparent 40%, transparent 80%, var(--black) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to left, var(--black) 0%, transparent 100%)', opacity: 0.8 }} />
+        </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 48 }}>
-          {BENEFITS.map(b => (
-            <div key={b.title} style={{
-              borderTop: '1px solid rgba(201,162,39,0.25)',
-              paddingTop: 16,
-            }}>
-              <div style={{ width: 6, height: 6, background: 'var(--gold)', borderRadius: '50%', marginBottom: 10 }} />
-              <div style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--white)', marginBottom: 6 }}>{b.title}</div>
-              <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>{b.body}</p>
+        <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: 900, marginLeft: 'auto', marginRight: 'auto', textAlign: 'right' }}>
+          <ScrollReveal>
+            <div className="kicker" style={{ marginBottom: 24, justifyContent: 'flex-end' }}>For Investors</div>
+            <h1 className="display-xl text-white" style={{ marginBottom: 32, lineHeight: 1.1 }}>
+              Access Africa's Most<br />
+              <span style={{ color: 'var(--gold)' }}>Promising Ventures.</span>
+            </h1>
+            <p className="body-lg" style={{ maxWidth: 600, marginBottom: 48, color: 'rgba(255,255,255,0.7)', marginLeft: 'auto' }}>
+              Quality deal flow, filtered to match your mandate. No noise. Just the right founders at the right stage, verified and ready to pitch.
+            </p>
+            <div className="flex gap-24 items-center justify-end" style={{ flexWrap: 'wrap' }}>
+              <Link to="/register?type=investor" className="btn btn-gold btn-lg" style={{ padding: '20px 48px' }}>Register as an Investor</Link>
+              <Link to="/events" className="btn-text-underline" style={{ color: 'var(--white)' }}>View Pitch Events &rarr;</Link>
             </div>
-          ))}
+          </ScrollReveal>
         </div>
+      </section>
 
-        <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-          <Link to="/register?type=investor" className="btn btn-gold btn-lg">Register as an Investor</Link>
-          <Link to="/events" style={{ fontSize: '0.875rem', color: 'var(--text-muted)', borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: 2 }}>
-            View Pitch Events
-          </Link>
+      {/* WHO QUALIFIES & BENEFITS */}
+      <section style={{ background: 'var(--black-mid)', padding: 'var(--section-pad) 0' }}>
+        <div className="container">
+          <div className="grid-2" style={{ gap: 80 }}>
+            {/* LEFT: Benefits */}
+            <ScrollReveal>
+              <h2 className="display-md text-white" style={{ marginBottom: 48, lineHeight: 1.1 }}>
+                Why Invest Through<br /><span style={{ color: 'var(--gold)' }}>SikaPitch.</span>
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
+                {BENEFITS.map((b, i) => (
+                  <div key={b.title} style={{
+                    borderTop: '1px solid rgba(255,255,255,0.08)',
+                    paddingTop: 32,
+                  }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 800, color: 'transparent', WebkitTextStroke: '1px rgba(201,162,39,0.4)', marginBottom: 16 }}>0{i+1}</div>
+                    <h3 className="heading-lg text-white" style={{ marginBottom: 12 }}>{b.title}</h3>
+                    <p className="body-md" style={{ color: 'rgba(255,255,255,0.5)' }}>{b.body}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            {/* RIGHT: Who Qualifies */}
+            <ScrollReveal delay={150}>
+              <div style={{ 
+                background: 'rgba(255,255,255,0.02)', 
+                border: '1px solid rgba(255,255,255,0.05)', 
+                borderRadius: 'var(--radius-lg)', 
+                padding: '48px',
+                marginTop: 24
+              }}>
+                <div style={{ fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 24 }}>Who Qualifies</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+                  {TYPES.map(t => (
+                    <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 16, borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: 24 }}>
+                      <div style={{ width: 8, height: 8, background: 'var(--gold)', borderRadius: '50%', flexShrink: 0 }} />
+                      <span className="body-lg" style={{ color: 'var(--white)' }}>{t}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
-      </div>
-
-      {/* MOBILE STYLES */}
-      <style>{`
-        @media (max-width: 900px) {
-          .for-investors-grid { grid-template-columns: 1fr !important; }
-          .for-investors-img { display: none !important; }
-        }
-        @media (max-width: 480px) {
-          .for-investors-grid .kicker { font-size: 0.625rem; }
-          .for-investors-grid .display-lg { font-size: 2.25rem; }
-        }
-      `}</style>
-    </div>
+      </section>
+    </>
   )
 }

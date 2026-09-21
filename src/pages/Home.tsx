@@ -75,11 +75,13 @@ export default function Home() {
             <div className="animate-fade-up" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 32, display: 'inline-block' }}>
               Africa's Premier Pitch Platform
             </div>
-            <h1 style={{ marginBottom: 32 }}>
-              <span className="display-xl text-white animate-fade-up delay-150" style={{ display: 'block' }}>You've got</span>
-              <span className="display-xl animate-fade-up delay-300" style={{ display: 'block', color: 'var(--gold)' }}>the idea.</span>
-              <span className="display-xl text-white animate-fade-up delay-450" style={{ display: 'block' }}>We've got</span>
-              <span className="display-xl animate-fade-up delay-600" style={{ display: 'block', color: 'var(--gold)' }}>the room.</span>
+            <h1 style={{ marginBottom: 32, lineHeight: 1.1 }}>
+              <span className="display-xl text-white animate-fade-up delay-150" style={{ display: 'block' }}>
+                You've got <span style={{ color: 'var(--gold)' }}>the idea.</span>
+              </span>
+              <span className="display-xl text-white animate-fade-up delay-300" style={{ display: 'block' }}>
+                We've got <span style={{ color: 'var(--gold)' }}>the room.</span>
+              </span>
             </h1>
             <p className="animate-fade-up delay-750 body-lg" style={{ margin: '0 auto 48px', maxWidth: 600, color: 'rgba(255,255,255,0.7)' }}>
               Pitch to the investors who can actually say yes. SikaPitch connects Africa's boldest founders to capital through structured events and a matching engine that works.

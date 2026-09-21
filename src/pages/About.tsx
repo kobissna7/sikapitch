@@ -5,15 +5,15 @@ export default function About() {
   return (
     <>
       {/* HERO */}
-      <section style={{ background: 'var(--black)', paddingTop: 'calc(var(--nav-h) + 100px)', paddingBottom: 100 }}>
+      <section style={{ background: 'var(--black)', paddingTop: 'calc(var(--nav-h) + 80px)', paddingBottom: 'clamp(60px, 8vw, 100px)' }}>
         <div className="container">
           <div style={{ maxWidth: 780 }}>
             <ScrollReveal>
-              <div className="kicker">About SikaPitch</div>
-              <h1 className="display-lg text-white" style={{ marginBottom: 24 }}>
+              <div className="kicker" style={{ marginBottom: 24 }}>About SikaPitch</div>
+              <h1 className="display-lg text-white" style={{ marginBottom: 24, lineHeight: 1.1 }}>
                 Building the Pipeline<br /><span style={{ color: 'var(--gold)' }}>Africa's Founders Deserve.</span>
               </h1>
-              <p className="body-lg" style={{ maxWidth: 600 }}>
+              <p className="body-lg" style={{ color: 'rgba(255,255,255,0.65)', maxWidth: 600 }}>
                 SikaPitch is a registered aggregator platform connecting African startups to funding opportunities. Through curated pitching events, we create room for innovators to present their ideas, sharpen them into workable solutions, and access the support they need.
               </p>
             </ScrollReveal>
@@ -22,26 +22,26 @@ export default function About() {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="section">
+      <section style={{ background: 'var(--black-mid)', padding: 'var(--section-pad) 0' }}>
         <div className="container">
           <div className="grid-2" style={{ gap: 64, alignItems: 'start' }}>
             <ScrollReveal>
-              <div className="kicker">Mission</div>
-              <h2 className="display-md text-white" style={{ marginBottom: 24 }}>Why We Exist</h2>
-              <p className="body-lg" style={{ marginBottom: 24 }}>
+              <div className="kicker" style={{ marginBottom: 24 }}>Mission</div>
+              <h2 className="display-md text-white" style={{ marginBottom: 24, lineHeight: 1.1 }}>Why We Exist</h2>
+              <p className="body-lg" style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 24 }}>
                 To democratise access to funding for African startups and SMEs by creating structured, transparent, and impactful pathways to capital and investor engagement.
               </p>
-              <p className="body-md">
+              <p className="body-md" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 We believe that geography and network should not determine who gets funded. The best ideas in Africa are not in one city or one country. SikaPitch exists to level that playing field.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <div className="kicker">Vision</div>
-              <h2 className="display-md text-white" style={{ marginBottom: 24 }}>What We're Building</h2>
-              <p className="body-lg" style={{ marginBottom: 24 }}>
+              <div className="kicker" style={{ marginBottom: 24 }}>Vision</div>
+              <h2 className="display-md text-white" style={{ marginBottom: 24, lineHeight: 1.1 }}>What We're Building</h2>
+              <p className="body-lg" style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 24 }}>
                 To become the most trusted platform for startup-investor engagement across Africa, driving economic transformation through structured capital deployment.
               </p>
-              <p className="body-md">
+              <p className="body-md" style={{ color: 'rgba(255,255,255,0.5)' }}>
                 A continent where any founder with a validated idea and the drive to build can find their investor, make their pitch, and grow their venture.
               </p>
             </ScrollReveal>
@@ -50,13 +50,13 @@ export default function About() {
       </section>
 
       {/* WHAT WE DO */}
-      <section className="section" style={{ background: 'var(--navy-mid)' }}>
+      <section style={{ background: 'var(--black)', padding: 'var(--section-pad) 0' }}>
         <div className="container">
-          <ScrollReveal style={{ textAlign: 'center', marginBottom: 64 }}>
-            <div className="kicker" style={{ justifyContent: 'center' }}>The Platform</div>
-            <h2 className="display-md text-white">What SikaPitch<br /><span style={{ color: 'var(--gold)' }}>Actually Does</span></h2>
+          <ScrollReveal style={{ textAlign: 'center', marginBottom: 80 }}>
+            <div className="kicker" style={{ justifyContent: 'center', marginBottom: 24 }}>The Platform</div>
+            <h2 className="display-lg text-white" style={{ lineHeight: 1.1 }}>What SikaPitch<br /><span style={{ color: 'var(--gold)' }}>Actually Does</span></h2>
           </ScrollReveal>
-          <div className="grid-3">
+          <div className="grid-3" style={{ gap: 40 }}>
             {[
               { num: '01', title: 'Aggregates Opportunity', body: 'We bring together startups, SMEs, investors, mentors, and ecosystem partners in one structured platform.' },
               { num: '02', title: 'Curates Events', body: 'We host and manage pitch events that give founders a real stage to present their business and get direct investor feedback.' },
@@ -66,10 +66,10 @@ export default function About() {
               { num: '06', title: 'Supports Growth', body: 'Beyond funding, we connect founders with mentors, advisors, and corporate sponsors who can open doors beyond capital.' },
             ].map((item, i) => (
               <ScrollReveal key={item.num} delay={i * 70}>
-                <div className="card-navy">
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 800, color: 'transparent', WebkitTextStroke: '1px rgba(201,162,39,0.25)', marginBottom: 16 }}>{item.num}</div>
-                  <h3 className="heading-md text-white" style={{ marginBottom: 10 }}>{item.title}</h3>
-                  <p className="body-sm">{item.body}</p>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3.5rem, 10vw, 4.5rem)', fontWeight: 800, color: 'transparent', WebkitTextStroke: '2px rgba(201,162,39,0.4)', marginBottom: 24 }}>{item.num}</div>
+                  <h3 className="heading-lg text-white" style={{ marginBottom: 16 }}>{item.title}</h3>
+                  <p className="body-md" style={{ color: 'rgba(255,255,255,0.5)' }}>{item.body}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -78,13 +78,13 @@ export default function About() {
       </section>
 
       {/* VALUES */}
-      <section className="section">
+      <section style={{ background: 'var(--black-mid)', padding: 'var(--section-pad) 0' }}>
         <div className="container">
-          <ScrollReveal style={{ marginBottom: 64 }}>
-            <div className="kicker">Core Values</div>
-            <h2 className="display-md text-white">Principles That<br /><span style={{ color: 'var(--gold)' }}>Guide Everything</span></h2>
+          <ScrollReveal style={{ marginBottom: 80 }}>
+            <div className="kicker" style={{ marginBottom: 24 }}>Core Values</div>
+            <h2 className="display-lg text-white" style={{ lineHeight: 1.1 }}>Principles That<br /><span style={{ color: 'var(--gold)' }}>Guide Everything</span></h2>
           </ScrollReveal>
-          <div className="grid-3" style={{ gap: 32 }}>
+          <div className="grid-3" style={{ gap: 48 }}>
             {[
               { label: 'Transparency', desc: 'Every match, every deal, every process in the open. No hidden fees, no opaque systems.' },
               { label: 'Accountability', desc: 'We hold ourselves to high standards in how we operate, how we serve founders, and how we engage investors.' },
@@ -95,8 +95,8 @@ export default function About() {
             ].map((v, i) => (
               <ScrollReveal key={v.label} delay={i * 70}>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 24 }}>
-                  <h3 className="heading-md text-white" style={{ marginBottom: 10 }}>{v.label}</h3>
-                  <p className="body-sm">{v.desc}</p>
+                  <h3 className="heading-md text-white" style={{ marginBottom: 16 }}>{v.label}</h3>
+                  <p className="body-md" style={{ color: 'rgba(255,255,255,0.5)' }}>{v.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -105,18 +105,18 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="section" style={{ textAlign: 'center' }}>
+      <section style={{ background: 'var(--black)', padding: 'var(--section-pad) 0', textAlign: 'center' }}>
         <div className="container">
           <ScrollReveal>
-            <h2 className="display-md text-white" style={{ marginBottom: 24 }}>
+            <h2 className="display-xl text-white" style={{ marginBottom: 24, lineHeight: 1.1 }}>
               Be Part of<br /><span style={{ color: 'var(--gold)' }}>Africa's Story.</span>
             </h2>
-            <p className="body-lg" style={{ maxWidth: 440, margin: '0 auto 40px' }}>
+            <p className="body-lg" style={{ color: 'rgba(255,255,255,0.5)', maxWidth: 500, margin: '0 auto 48px' }}>
               Whether you're a founder with a vision or an investor looking for the next great African company, SikaPitch is your platform.
             </p>
-            <div className="flex gap-16 justify-center" style={{ flexWrap: 'wrap' }}>
-              <Link to="/register" className="btn btn-gold btn-lg">Register as a Startup</Link>
-              <Link to="/register?type=investor" className="btn btn-ghost btn-lg">Register as an Investor</Link>
+            <div className="flex gap-24 justify-center items-center" style={{ flexWrap: 'wrap' }}>
+              <Link to="/register" className="btn btn-gold btn-lg" style={{ padding: '20px 48px' }}>Register as a Startup</Link>
+              <Link to="/register?type=investor" className="btn-text-underline" style={{ color: 'var(--white)' }}>Register as an Investor &rarr;</Link>
             </div>
           </ScrollReveal>
         </div>
