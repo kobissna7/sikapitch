@@ -210,8 +210,7 @@ export default function Home() {
 
             <ScrollReveal delay={150}>
               <div style={{
-                background: 'var(--black-card)',
-                border: '1px solid rgba(255,255,255,0.05)',
+                background: 'var(--black-mid)',
                 borderRadius: 24, padding: 48, position: 'relative', overflow: 'hidden',
               }}>
                 <div style={{ position: 'absolute', top: -80, right: -80, width: 300, height: 300, background: 'radial-gradient(circle, rgba(201,162,39,0.1) 0%, transparent 70%)', pointerEvents: 'none' }} />

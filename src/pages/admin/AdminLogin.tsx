@@ -66,7 +66,7 @@ export default function AdminLogin() {
           </Link>
 
           {/* Admin badge */}
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'var(--gold-pale)', border: '1px solid var(--border-gold)', borderRadius: 2, padding: '5px 12px', marginBottom: 28 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 28 }}>
             <span style={{ fontSize: '0.625rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)' }}>Admin Access</span>
           </div>
 
