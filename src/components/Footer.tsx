@@ -58,7 +58,7 @@ export default function Footer() {
       </div>
       <div style={{
         position: 'absolute', bottom: -20, left: '50%', transform: 'translateX(-50%)',
-        fontFamily: 'var(--font-display)', fontSize: 'clamp(8rem, 20vw, 24rem)',
+        fontFamily: 'var(--font-display)', fontSize: 'clamp(4rem, 18vw, 24rem)',
         fontWeight: 900, color: 'rgba(255,255,255,0.02)', letterSpacing: '-0.04em',
         pointerEvents: 'none', whiteSpace: 'nowrap', userSelect: 'none',
         lineHeight: 0.8, zIndex: 0

@@ -150,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* ===== PULL QUOTE ===== */}
-      <section style={{ background: 'var(--black-mid)', padding: '160px 0' }}>
+      <section style={{ background: 'var(--black-mid)', padding: 'var(--section-pad) 0' }}>
         <div className="container" style={{ maxWidth: 880, textAlign: 'center' }}>
           <ScrollReveal>
             <div style={{ fontSize: '3.5rem', color: 'var(--gold)', fontFamily: 'Georgia, serif', lineHeight: 0.5, marginBottom: 32, opacity: 0.5 }}>"</div>
@@ -249,9 +249,9 @@ export default function Home() {
               <ScrollReveal key={v.num} delay={i * 100}>
                 <div className="grid-2" style={{
                   gap: 40, alignItems: 'center',
-                  padding: '64px 0'
+                  padding: 'var(--section-pad) 0'
                 }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '4.5rem', fontWeight: 800, color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.1)' }}>{v.num}</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3.5rem, 10vw, 4.5rem)', fontWeight: 800, color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.1)' }}>{v.num}</div>
                   <h3 className="heading-lg text-white">{v.title}</h3>
                   <p className="body-md">{v.body}</p>
                 </div>
