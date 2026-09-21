@@ -772,7 +772,7 @@ hr { border: none; border-top: 1px solid var(--border); }
   .display-md { font-size: clamp(1.625rem, 8vw, 2.5rem); }
   .btn { padding: 14px 24px; font-size: 0.8125rem; }
   .btn-lg { padding: 16px 28px; font-size: 0.875rem; }
-  .auth-form-col { padding: 36px 20px !important; }
+  .auth-form-col { padding: calc(var(--nav-h) + 24px) 20px 64px !important; }
   .data-table { min-width: 520px; font-size: 0.8125rem; }
   .data-table th, .data-table td { padding: 10px 12px; }
   .modal { padding: 24px 20px; }
