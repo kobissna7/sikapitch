@@ -2,10 +2,9 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--navy-deep)' }}>
-      <div style={{ height: 1, background: 'linear-gradient(90deg, transparent 0%, rgba(201,162,39,0.5) 30%, rgba(201,162,39,0.5) 70%, transparent 100%)' }} />
-      <div className="footer" style={{ background: 'transparent', borderTop: 'none', paddingTop: 72 }}>
-        <div className="container">
+    <footer style={{ background: 'var(--black-mid)', position: 'relative', overflow: 'hidden' }}>
+      <div className="footer" style={{ background: 'transparent', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 72, paddingBottom: 180 }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="footer-grid">
             <div className="footer-brand">
               <img src="/logo.png" alt="SikaPitch" className="footer-logo" />
@@ -56,6 +55,15 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
+      <div style={{
+        position: 'absolute', bottom: -20, left: '50%', transform: 'translateX(-50%)',
+        fontFamily: 'var(--font-display)', fontSize: 'clamp(8rem, 20vw, 24rem)',
+        fontWeight: 900, color: 'rgba(255,255,255,0.02)', letterSpacing: '-0.04em',
+        pointerEvents: 'none', whiteSpace: 'nowrap', userSelect: 'none',
+        lineHeight: 0.8, zIndex: 0
+      }}>
+        SIKAPITCH
       </div>
     </footer>
   )

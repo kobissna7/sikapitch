@@ -48,67 +48,53 @@ export default function Home() {
         minHeight: '100dvh',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
-        background: 'var(--navy)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: 'var(--black)',
+        overflow: 'hidden'
       }}>
         
-        {/* Main Content Split */}
-        <div className="hero-split-grid" style={{ flex: 1 }}>
-          {/* Left Content Column */}
-          <div className="hero-content-left container-left-pad" style={{ 
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', 
-            paddingTop: 'calc(var(--nav-h) + 16px)', paddingBottom: 32 
-          }}>
-            <div style={{ maxWidth: 600 }}>
-              <div className="animate-fade-up" style={{ fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 }}>
-                <span>Africa's Premier Pitch Platform</span>
-              </div>
-              <h1 style={{ marginBottom: 24 }}>
-                <span className="display-xl text-white animate-fade-up delay-150" style={{ display: 'block' }}>You've got</span>
-                <span className="display-xl animate-fade-up delay-300" style={{ display: 'block', color: 'var(--gold)' }}>the idea.</span>
-                <span className="display-xl text-white animate-fade-up delay-450" style={{ display: 'block' }}>We've got</span>
-                <span className="display-xl animate-fade-up delay-600" style={{ display: 'block', color: 'var(--gold)' }}>the room.</span>
-              </h1>
-              <p className="animate-fade-up delay-750" style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.6)', maxWidth: 520, lineHeight: 1.6, marginBottom: 32 }}>
-                Pitch to the investors who can actually say yes. SikaPitch connects Africa's boldest founders to capital through structured events and a matching engine that works.
-              </p>
-              <div className="flex gap-24 items-center animate-fade-up delay-900" style={{ flexWrap: 'wrap', marginBottom: 32 }}>
-                <Link to="/register" className="btn btn-gold btn-lg">Register Your Startup</Link>
-                <Link to="/register?type=investor" className="btn-text-underline">I'm an investor &rarr;</Link>
-              </div>
-              {/* Stat Strip */}
-              <div className="animate-fade-up delay-900" style={{ display: 'flex', gap: 32, flexWrap: 'wrap', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 20 }}>
-                {[['₵2.4M+', 'Raised via Platform'], ['180+', 'Founders Funded'], ['40+', 'Active Investors']].map(([val, label]) => (
-                  <div key={label}>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 800, color: 'var(--white)', letterSpacing: '-0.02em' }}>{val}</div>
-                    <div style={{ fontSize: '0.625rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)', marginTop: 4 }}>{label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Image Column */}
-          <div className="hero-img-right">
+        {/* Background Image / Video */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
             <div
               className="animate-ken-burns"
               style={{
                 position: 'absolute', inset: 0,
                 backgroundImage: 'url("https://images.unsplash.com/photo-1687422808565-929533931584?auto=format&fit=crop&w=2070&q=80")',
                 backgroundSize: 'cover', backgroundPosition: 'center',
-                opacity: 0.85,
+                opacity: 0.35,
               }}
             />
-            {/* Subtle gradient to blend the left edge of the photo slightly into the navy split */}
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, var(--navy) 0%, transparent 15%, transparent 85%, var(--navy) 100%)' }} />
-          </div>
+            {/* Dark overlay */}
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--black) 0%, transparent 30%, transparent 70%, var(--black) 100%)' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, transparent 0%, var(--black) 100%)', opacity: 0.8 }} />
+        </div>
+
+        {/* Central Content */}
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: 900, paddingTop: 'calc(var(--nav-h) + 40px)', paddingBottom: 100 }}>
+            <div className="animate-fade-up" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 32, display: 'inline-block' }}>
+              Africa's Premier Pitch Platform
+            </div>
+            <h1 style={{ marginBottom: 32 }}>
+              <span className="display-xl text-white animate-fade-up delay-150" style={{ display: 'block' }}>You've got</span>
+              <span className="display-xl animate-fade-up delay-300" style={{ display: 'block', color: 'var(--gold)' }}>the idea.</span>
+              <span className="display-xl text-white animate-fade-up delay-450" style={{ display: 'block' }}>We've got</span>
+              <span className="display-xl animate-fade-up delay-600" style={{ display: 'block', color: 'var(--gold)' }}>the room.</span>
+            </h1>
+            <p className="animate-fade-up delay-750 body-lg" style={{ margin: '0 auto 48px', maxWidth: 600, color: 'rgba(255,255,255,0.7)' }}>
+              Pitch to the investors who can actually say yes. SikaPitch connects Africa's boldest founders to capital through structured events and a matching engine that works.
+            </p>
+            <div className="flex gap-24 items-center justify-center animate-fade-up delay-900" style={{ flexWrap: 'wrap', marginBottom: 48 }}>
+              <Link to="/register" className="btn btn-gold btn-lg">Register Your Startup</Link>
+              <Link to="/register?type=investor" className="btn-text-underline">I'm an investor &rarr;</Link>
+            </div>
         </div>
 
         {/* ===== MARQUEE ===== */}
-        <div className="marquee-wrap" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="marquee-track">
+        <div className="marquee-wrap animate-fade-in delay-900" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: 'none', background: 'transparent' }}>
+          <div className="marquee-track" style={{ padding: '24px 0' }}>
             {MARQUEE_ITEMS.map((item, i) => (
-              <span key={i} className="marquee-item">
+              <span key={i} className="marquee-item" style={{ fontSize: '0.875rem' }}>
                 {item} <span className="marquee-dot">·</span>
               </span>
             ))}
@@ -133,7 +119,6 @@ export default function Home() {
                   gap: 32,
                   alignItems: 'center',
                   padding: '72px 0',
-                  borderBottom: index < HOW_IT_WORKS.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
                 }}>
                   <div>
                     <div style={{
@@ -165,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* ===== PULL QUOTE ===== */}
-      <section style={{ background: 'var(--navy-mid)', padding: '120px 0' }}>
+      <section style={{ background: 'var(--black-mid)', padding: '160px 0' }}>
         <div className="container" style={{ maxWidth: 880, textAlign: 'center' }}>
           <ScrollReveal>
             <div style={{ fontSize: '3.5rem', color: 'var(--gold)', fontFamily: 'Georgia, serif', lineHeight: 0.5, marginBottom: 32, opacity: 0.5 }}>"</div>
@@ -215,9 +200,9 @@ export default function Home() {
 
             <ScrollReveal delay={150}>
               <div style={{
-                background: 'var(--navy-card)',
-                border: '1px solid var(--navy-border)',
-                borderRadius: 8, padding: 48, position: 'relative', overflow: 'hidden',
+                background: 'var(--black-card)',
+                border: '1px solid rgba(255,255,255,0.05)',
+                borderRadius: 24, padding: 48, position: 'relative', overflow: 'hidden',
               }}>
                 <div style={{ position: 'absolute', top: -80, right: -80, width: 300, height: 300, background: 'radial-gradient(circle, rgba(201,162,39,0.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
                 <div style={{ position: 'relative', zIndex: 1 }}>
@@ -264,9 +249,9 @@ export default function Home() {
               <ScrollReveal key={v.num} delay={i * 100}>
                 <div className="grid-2" style={{
                   gap: 40, alignItems: 'center',
-                  padding: '48px 0', borderBottom: i < VALUES.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                  padding: '64px 0'
                 }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '3.5rem', fontWeight: 800, color: 'transparent', WebkitTextStroke: '1px var(--border-gold)' }}>{v.num}</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '4.5rem', fontWeight: 800, color: 'transparent', WebkitTextStroke: '2px rgba(255,255,255,0.1)' }}>{v.num}</div>
                   <h3 className="heading-lg text-white">{v.title}</h3>
                   <p className="body-md">{v.body}</p>
                 </div>
