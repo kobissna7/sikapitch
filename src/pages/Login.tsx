@@ -47,9 +47,9 @@ export default function Login() {
   }
 
   return (
-    <div className="auth-layout" style={{ minHeight: '100vh', paddingTop: 'var(--nav-h)' }}>
+    <div className="auth-layout" style={{ minHeight: '100vh' }}>
       {/* ===== LEFT: FORM ===== */}
-      <div className="auth-form-col" style={{ background: 'var(--navy-mid)' }}>
+      <div className="auth-form-col" style={{ background: 'var(--black-mid)', overflowY: 'auto', paddingTop: 'calc(var(--nav-h) + 80px)', paddingBottom: '80px' }}>
 
         <div style={{ maxWidth: 400, width: '100%', animationName: 'fadeInUp', animationDuration: '0.9s', animationFillMode: 'forwards' }}>
           {/* Kicker */}

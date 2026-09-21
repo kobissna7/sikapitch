@@ -70,7 +70,7 @@ export default function Register() {
   return (
     <div className="auth-layout" style={{ height: '100vh', overflow: 'hidden' }}>
       {/* ===== LEFT: FORM ===== */}
-      <div className="auth-form-col" style={{ background: 'var(--navy-mid)', overflowY: 'auto', paddingTop: 'max(var(--nav-h), 40px)' }}>
+      <div className="auth-form-col" style={{ background: 'var(--black-mid)', overflowY: 'auto', paddingTop: 'calc(var(--nav-h) + 80px)', paddingBottom: '80px' }}>
 
         <div style={{ maxWidth: 420, width: '100%' }}>
           {/* Kicker */}
