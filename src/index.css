@@ -598,6 +598,19 @@ hr { border: none; border-top: 1px solid var(--border); }
 .field-input:focus { border-bottom-color: var(--gold); box-shadow: 0 1px 0 0 var(--gold); }
 .field-input.field-error { border-bottom-color: #e57373; box-shadow: 0 1px 0 0 #e57373; }
 .field-input:focus.field-error { border-bottom-color: #e57373; box-shadow: 0 1px 0 0 #e57373; }
+
+/* Override browser autofill / paste highlight — keep background dark */
+.field-input:-webkit-autofill,
+.field-input:-webkit-autofill:hover,
+.field-input:-webkit-autofill:focus,
+.field-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 9999px var(--black) inset !important;
+  box-shadow: 0 0 0 9999px var(--black) inset !important;
+  -webkit-text-fill-color: var(--white) !important;
+  caret-color: var(--gold);
+  border-bottom-color: rgba(255,255,255,0.12);
+  transition: background-color 9999s ease-in-out 0s;
+}
 .field-error-msg { font-size: 0.75rem; color: #e57373; margin-top: 6px; }
 .field-select {
   width: 100%;
