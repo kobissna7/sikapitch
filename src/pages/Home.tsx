@@ -159,32 +159,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PULL QUOTE ===== */}
+      {/* ===== TESTIMONIAL — SikaDaily / Barnabas Terabo ===== */}
       <section style={{ background: 'var(--black-mid)', padding: 'var(--section-pad) 0' }}>
-        <div className="container" style={{ maxWidth: 880, textAlign: 'center' }}>
+        <div className="container" style={{ maxWidth: 900, textAlign: 'center' }}>
           <ScrollReveal>
-            <div style={{ fontSize: '3.5rem', color: 'var(--gold)', fontFamily: 'Georgia, serif', lineHeight: 0.5, marginBottom: 32, opacity: 0.5 }}>"</div>
+            {/* Kicker */}
+            <div className="kicker" style={{ justifyContent: 'center', marginBottom: 40 }}>Winner Testimonial</div>
+
+            {/* Stars */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginBottom: 36 }}>
+              {[...Array(5)].map((_, i) => (
+                <span key={i} style={{ color: 'var(--gold)', fontSize: '1.25rem' }}>★</span>
+              ))}
+            </div>
+
+            {/* Quote mark */}
+            <div style={{ fontSize: '4rem', color: 'var(--gold)', fontFamily: 'Georgia, serif', lineHeight: 0.5, marginBottom: 40, opacity: 0.45 }}>"</div>
+
+            {/* Quote body */}
             <p style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.625rem, 3.5vw, 2.75rem)',
+              fontSize: 'clamp(1.5rem, 3.2vw, 2.5rem)',
               fontWeight: 800,
-              lineHeight: 1.2,
+              lineHeight: 1.25,
               color: 'var(--white)',
               letterSpacing: '-0.02em',
-              marginBottom: 48,
+              marginBottom: 56,
+              maxWidth: 820,
+              margin: '0 auto 56px',
             }}>
-              SikaPitch gave us the structure we needed to prepare our deck, and put us directly in front of the investors who ended up leading our seed round.
+              Winning SikaPitch was a pivotal moment for SikaDaily. The platform gave us the crucial validation we needed to transform our vision from a raw idea into a concrete business.
             </p>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16 }}>
+
+            {/* Attribution */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
+              {/* Avatar initials */}
               <div style={{
-                width: 52, height: 52, borderRadius: '50%', flexShrink: 0,
-                backgroundImage: 'url("https://images.unsplash.com/photo-1573496527892-904f897eb744?w=100&h=100&fit=crop&crop=face")',
-                backgroundSize: 'cover', backgroundPosition: 'center',
+                width: 56, height: 56, borderRadius: '50%', flexShrink: 0,
+                background: 'linear-gradient(135deg, var(--gold) 0%, #8B6914 100%)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.125rem', color: 'var(--black)',
                 border: '2px solid var(--border-gold)',
-              }} />
+              }}>BT</div>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontWeight: 700, color: 'var(--white)', fontSize: '1rem' }}>David Osei</div>
-                <div style={{ fontSize: '0.8125rem', color: 'var(--gold)' }}>Founder, AgriGrow Solutions — Funded 2025</div>
+                <div style={{ fontWeight: 700, color: 'var(--white)', fontSize: '1rem', marginBottom: 2 }}>Barnabas Terabo</div>
+                <div style={{ fontSize: '0.8125rem', color: 'var(--gold)', marginBottom: 6 }}>Founder & CEO, SikaDaily</div>
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 6,
+                  fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
+                  color: 'var(--black)', background: 'var(--gold)', borderRadius: 4, padding: '3px 8px',
+                }}>🏆 SikaPitch Winner — Season 1</span>
               </div>
             </div>
           </ScrollReveal>
