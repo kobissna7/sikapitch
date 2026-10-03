@@ -215,7 +215,7 @@ export default function SettingsAdmin() {
               <label className="field-label" htmlFor="admin-role">Role</label>
               <select
                 id="admin-role"
-                className="field-input"
+                className="field-select"
                 value={role}
                 onChange={e => setRole(e.target.value)}
               >
