@@ -15,19 +15,19 @@ const MARQUEE_ITEMS = [
 const HOW_IT_WORKS = [
   {
     num: '01',
-    kicker: '01 — Register',
+    kicker: '01 Register',
     title: "You've got the idea.",
     body: "Create your startup profile in under 10 minutes. Tell us your sector, stage, and what you need. That's all we ask to start.",
   },
   {
     num: '02',
-    kicker: '02 — Pitch',
+    kicker: '02 Pitch',
     title: "We've got the room.",
     body: "Apply to curated pitch events matched to your industry. Upload your deck. We handle the curation. You handle the pitch.",
   },
   {
     num: '03',
-    kicker: '03 — Get Funded',
+    kicker: '03 Get Funded',
     title: 'They can say yes.',
     body: 'Our matching engine connects you with investors actively looking for businesses like yours. No cold outreach. Direct introductions.',
   },
@@ -208,7 +208,7 @@ export default function Home() {
                   display: 'inline-flex', alignItems: 'center', gap: 6,
                   fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
                   color: 'var(--black)', background: 'var(--gold)', borderRadius: 4, padding: '3px 8px',
-                }}>🏆 SikaPitch Winner — Season 1</span>
+                }}>🏆 SikaPitch Winner · Season 1</span>
               </div>
             </div>
           </ScrollReveal>
