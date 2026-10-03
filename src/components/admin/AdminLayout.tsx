@@ -66,7 +66,7 @@ export default function AdminLayout() {
         <div className="admin-user-badge">
           <div className="admin-avatar">{adminEmail !== 'Admin' ? adminEmail[0].toUpperCase() : 'A'}</div>
           <div style={{ overflow: 'hidden' }}>
-            <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--white)', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+            <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--white)', wordBreak: 'break-all' }}>
               {adminEmail}
             </div>
             <div style={{ fontSize: '0.6875rem', color: 'var(--gold)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Super Admin</div>
