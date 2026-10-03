@@ -4,7 +4,6 @@ import toast from 'react-hot-toast'
 import { supabase } from '../../lib/supabase'
 
 interface AdminUser {
-  id: string
   user_id: string
   role: string
   created_at: string
@@ -38,13 +37,12 @@ export default function SettingsAdmin() {
       // email is stored in admin_roles when users are created via this form
       const { data, error } = await supabase
         .from('admin_roles')
-        .select('id, user_id, role, created_at, email')
+        .select('user_id, role, created_at, email')
         .order('created_at', { ascending: true })
 
       if (error) throw error
       setAdmins(
         (data || []).map((a: any) => ({
-          id: a.id,
           user_id: a.user_id,
           role: a.role,
           created_at: a.created_at,
@@ -115,23 +113,23 @@ export default function SettingsAdmin() {
     }
   }
 
-  async function handleRevoke(adminId: string, userId: string) {
+  async function handleRevoke(userId: string) {
     if (userId === currentUserId) {
       toast.error("You cannot revoke your own admin access.")
       return
     }
     if (!confirm('Remove this admin user? They will no longer be able to access the dashboard.')) return
 
-    setRevoking(adminId)
+    setRevoking(userId)
     try {
       const { error } = await supabase
         .from('admin_roles')
         .delete()
-        .eq('id', adminId)
+        .eq('user_id', userId)
 
       if (error) throw error
       toast.success('Admin access revoked.')
-      setAdmins(prev => prev.filter(a => a.id !== adminId))
+      setAdmins(prev => prev.filter(a => a.user_id !== userId))
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Failed to revoke access.'
       toast.error(msg)
@@ -325,7 +323,7 @@ export default function SettingsAdmin() {
             </thead>
             <tbody>
               {admins.map(a => (
-                <tr key={a.id}>
+                <tr key={a.user_id}>
                   <td>
                     <div>
                       {a.email ? (
@@ -350,7 +348,7 @@ export default function SettingsAdmin() {
                   </td>
                   <td>
                     <button
-                      id={`revoke-admin-${a.id}`}
+                      id={`revoke-admin-${a.user_id}`}
                       className="btn btn-ghost"
                       style={{
                         fontSize: '0.75rem', padding: '6px 10px',
@@ -360,10 +358,10 @@ export default function SettingsAdmin() {
                         opacity: a.user_id === currentUserId ? 0.4 : 1,
                         cursor: a.user_id === currentUserId ? 'not-allowed' : 'pointer',
                       }}
-                      disabled={revoking === a.id || a.user_id === currentUserId}
-                      onClick={() => handleRevoke(a.id, a.user_id)}
+                      disabled={revoking === a.user_id || a.user_id === currentUserId}
+                      onClick={() => handleRevoke(a.user_id)}
                     >
-                      {revoking === a.id ? (
+                      {revoking === a.user_id ? (
                         <Loader2 size={13} className="spin" />
                       ) : (
                         <Trash2 size={13} />
