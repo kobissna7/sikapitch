@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 
 const EVENTS = [
   {
@@ -47,6 +48,11 @@ export default function Events() {
 
   return (
     <>
+      <SEO 
+        title="Events | SikaPitch" 
+        description="View upcoming SikaPitch pitch events, roundtables, and sector showcases across Africa."
+        url="https://sikapitch.com/events" 
+      />
       {/* HERO */}
       <section style={{ background: 'var(--black)', paddingTop: 'calc(var(--nav-h) + 80px)', paddingBottom: 'clamp(60px, 8vw, 100px)' }}>
         <div className="container">

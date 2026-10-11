@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 
 const MARQUEE_ITEMS = [
   '180+ Founders Funded',
@@ -42,6 +43,11 @@ const VALUES = [
 export default function Home() {
   return (
     <>
+      <SEO 
+        title="SikaPitch | Where Africa's Founders Pitch, Win, and Get Funded" 
+        url="https://sikapitch.com/" 
+      />
+
       {/* ===== HERO — compressed to 100vh ===== */}
       <section className="page-hero-dark" style={{
         position: 'relative',
@@ -193,14 +199,20 @@ export default function Home() {
 
             {/* Attribution */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
-              {/* Avatar initials */}
+              {/* Avatar photo */}
               <div style={{
-                width: 56, height: 56, borderRadius: '50%', flexShrink: 0,
-                background: 'linear-gradient(135deg, var(--gold) 0%, #8B6914 100%)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.125rem', color: 'var(--black)',
+                width: 60, height: 60, borderRadius: '50%', flexShrink: 0,
+                overflow: 'hidden',
                 border: '2px solid var(--border-gold)',
-              }}>BT</div>
+                boxShadow: '0 0 20px rgba(201, 162, 39, 0.25)',
+                background: 'var(--black-light)',
+              }}>
+                <img
+                  src="/barnabas-terabo-avatar.webp"
+                  alt="Barnabas Terabo - Founder & CEO, SikaDaily"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
               <div style={{ textAlign: 'left' }}>
                 <div style={{ fontWeight: 700, color: 'var(--white)', fontSize: '1rem', marginBottom: 2 }}>Barnabas Terabo</div>
                 <div style={{ fontSize: '0.8125rem', color: 'var(--gold)', marginBottom: 6 }}>Founder & CEO, SikaDaily</div>

@@ -1,6 +1,13 @@
+import SEO from '../components/SEO'
+
 export default function Terms() {
   return (
     <>
+      <SEO 
+        title="Terms and Conditions | SikaPitch" 
+        description="Read the terms and conditions for using the SikaPitch platform."
+        url="https://sikapitch.com/terms" 
+      />
       <section className="page-hero-navy section">
         <div className="container">
           <div style={{ maxWidth: 700 }}>

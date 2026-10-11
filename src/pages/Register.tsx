@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { useAuth, type UserRole } from '../context/AuthContext'
 import toast from 'react-hot-toast'
 import { Eye, EyeOff } from 'lucide-react'
+import SEO from '../components/SEO'
 
 export default function Register() {
   const [searchParams] = useSearchParams()
@@ -68,7 +69,13 @@ export default function Register() {
   const clearError = (field: string) => setErrors(prev => { const n = { ...prev }; delete n[field]; return n })
 
   return (
-    <div className="auth-layout" style={{ height: '100vh', overflow: 'hidden' }}>
+    <>
+      <SEO 
+        title="Register | SikaPitch" 
+        description="Create your SikaPitch account as a startup or investor to join Africa's premier pitch platform."
+        url="https://sikapitch.com/register" 
+      />
+      <div className="auth-layout" style={{ height: '100vh', overflow: 'hidden' }}>
       {/* ===== LEFT: FORM ===== */}
       <div className="auth-form-col" style={{ background: 'var(--black-mid)', overflowY: 'auto', paddingTop: 'calc(var(--nav-h) + 80px)', paddingBottom: '80px' }}>
 
@@ -223,5 +230,6 @@ export default function Register() {
         </div>
       </div>
     </div>
+    </>
   )
 }

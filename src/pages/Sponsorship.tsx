@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const SPONSORSHIP_TIERS = [
   {
@@ -38,6 +39,11 @@ const SPONSORSHIP_TIERS = [
 export default function Sponsorship() {
   return (
     <>
+      <SEO 
+        title="Sponsorship | SikaPitch" 
+        description="Partner with SikaPitch to support African innovation and gain visibility across our events and platform."
+        url="https://sikapitch.com/sponsorship" 
+      />
       <section className="page-hero-navy section">
         <div className="container">
           <div style={{ maxWidth: 700 }}>

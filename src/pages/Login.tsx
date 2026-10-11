@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import toast from 'react-hot-toast'
 import { Eye, EyeOff } from 'lucide-react'
+import SEO from '../components/SEO'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -47,7 +48,13 @@ export default function Login() {
   }
 
   return (
-    <div className="auth-layout" style={{ minHeight: '100vh' }}>
+    <>
+      <SEO 
+        title="Log In | SikaPitch" 
+        description="Log in to your SikaPitch account to access pitch events, investment opportunities, and more."
+        url="https://sikapitch.com/login" 
+      />
+      <div className="auth-layout" style={{ minHeight: '100vh' }}>
       {/* ===== LEFT: FORM ===== */}
       <div className="auth-form-col" style={{ background: 'var(--black-mid)', overflowY: 'auto', paddingTop: 'calc(var(--nav-h) + 80px)', paddingBottom: '80px' }}>
 
@@ -157,5 +164,6 @@ export default function Login() {
         </div>
       </div>
     </div>
+    </>
   )
 }

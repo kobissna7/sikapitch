@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 
 const BENEFITS = [
   { title: 'Business Registration', body: 'Register and verify your startup. Build trust with investors from day one.' },
@@ -11,6 +12,11 @@ const BENEFITS = [
 export default function ForStartups() {
   return (
     <>
+      <SEO 
+        title="For Startups & SMEs | SikaPitch" 
+        description="Build your pipeline from idea to funded venture. Register your startup, apply to pitch events, and connect with investors."
+        url="https://sikapitch.com/for-startups" 
+      />
       {/* IMMERSIVE HERO */}
       <section style={{
         position: 'relative',

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 
 const BENEFITS = [
   { title: 'Curated Deal Flow', body: 'Access a vetted pipeline of African startups, pre-screened for quality before they reach your dashboard.' },
@@ -13,6 +14,11 @@ const TYPES = ['Angel Investors', 'Venture Capital Funds', 'Family Offices', 'De
 export default function ForInvestors() {
   return (
     <>
+      <SEO 
+        title="For Investors | SikaPitch" 
+        description="Access Africa's most promising ventures. Get curated deal flow matched to your mandate."
+        url="https://sikapitch.com/for-investors" 
+      />
       {/* IMMERSIVE HERO */}
       <section style={{
         position: 'relative',

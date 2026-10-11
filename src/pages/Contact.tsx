@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'
+import SEO from '../components/SEO'
 
 export default function Contact() {
   const [loading, setLoading] = useState(false)
@@ -18,6 +19,11 @@ export default function Contact() {
 
   return (
     <>
+      <SEO 
+        title="Contact Us | SikaPitch" 
+        description="Get in touch with the SikaPitch team for support, partnerships, or general inquiries."
+        url="https://sikapitch.com/contact" 
+      />
       <section className="page-hero-navy section">
         <div className="container">
           <div style={{ maxWidth: 700 }}>

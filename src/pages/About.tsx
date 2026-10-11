@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 
 export default function About() {
   return (
     <>
+      <SEO 
+        title="About Us | SikaPitch" 
+        description="Learn about SikaPitch's mission to build the pipeline Africa's founders deserve."
+        url="https://sikapitch.com/about" 
+      />
       {/* HERO */}
       <section style={{ background: 'var(--black)', paddingTop: 'calc(var(--nav-h) + 80px)', paddingBottom: 'clamp(60px, 8vw, 100px)' }}>
         <div className="container">

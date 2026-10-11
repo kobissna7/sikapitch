@@ -1,6 +1,13 @@
+import SEO from '../components/SEO'
+
 export default function Privacy() {
   return (
     <>
+      <SEO 
+        title="Privacy Policy | SikaPitch" 
+        description="Read SikaPitch's Privacy Policy to learn how we handle your data."
+        url="https://sikapitch.com/privacy" 
+      />
       <section className="page-hero-navy section">
         <div className="container">
           <div style={{ maxWidth: 700 }}>
