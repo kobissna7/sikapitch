@@ -220,7 +220,7 @@ export default function Home() {
                   display: 'inline-flex', alignItems: 'center', gap: 6,
                   fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase',
                   color: 'var(--black)', background: 'var(--gold)', borderRadius: 4, padding: '3px 8px',
-                }}>🏆 SikaPitch Winner · Season 1</span>
+                }}>SikaPitch Winner · Season 1</span>
               </div>
             </div>
           </ScrollReveal>
